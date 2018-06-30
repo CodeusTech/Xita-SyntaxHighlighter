@@ -1,0 +1,135 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "XSL",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#misc"
+		},
+		{
+			"include": "#constant"
+		},
+		{
+			"include": "#functions"
+		}
+	],
+	"repository": 
+	{
+		"comment":
+		{
+			"patterns":
+			[
+				{
+					"name"	: "comment.block.xsl",
+					"begin"	: "\\(\\*",
+					"end"		: "\\*\\)"
+
+				},
+				{
+					"name"	: "comment.line.xsl",
+					"begin" : "--",
+					"end"		: "\n"
+				}
+			]
+		},
+		"keywords": 
+		{
+			"patterns": 
+			[
+				{
+					"name":  "keyword.control.xsl",
+					"match": "\\b(if|then|else|in)\\b"
+				},
+				{
+					"name":  "constant.other.color.xsl",
+					"match": "\\b(printdb|print)\\b"
+				},
+				{
+					"name":  "keyword.xsl",
+					"match": "\\b(type)\\b"
+				},
+				{
+					"name": "keyword.xsl",
+					"match": "<<-"
+				}
+			]
+		},
+		"strings": 
+		{
+			"patterns": 
+			[
+				{
+					"name": "string.quoted.double.xsl",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": 
+					[
+						{
+							"name": "constant.character.escape.xsl",
+							"match": "\\\\."
+						}
+					]
+				},
+				{
+					"name": "string.quoted.single",
+					"begin": "'",
+					"end"	 : "'",
+					"patterns": 
+					[
+						{
+							"name": "constant.character.escape.xsl",
+							"match": "\\\\."
+						}
+					]
+				}
+			]
+		},
+		"constant":
+		{
+			"patterns":
+			[
+				{
+					"name"	: "constant.numeric.xsl",
+					"match"	: "\\b([0-9]+|0[xX][0-9a-fA-F]+)\\b"
+				},
+				{
+					"name": "constant.language.xsl",
+					"match": "\\b(true|false)\\b"
+				}
+			]
+		},
+		"functions":
+		{
+			"patterns":
+			[
+				{
+					"name": "variable.parameter",
+					"match": "\\b(let)\\b\\s\\b([a-z_`'][a-zA-Z0-9_`']*)\\b(\\s\\b([a-z_`'][a-zA-Z0-9_`']*)\\b)*",
+					"captures":
+					{
+						"1": {"name": "keyword.other"},
+						"2": {"name": "entity.name.function"},
+						"3": {"name": "variable.parameter"}
+					}
+				},
+				{
+					"match": "\\b(const)\\b\\s\\b([a-z_`'][a-zA-Z0-9_`']*)\\b",
+					"captures": 
+					{
+						"1": {"name": "keyword.other"},
+						"2": {"name": "constant"}
+					}
+				}
+			]
+		}
+	},
+	"scopeName": "source.xsl"
+}

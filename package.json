@@ -1,0 +1,28 @@
+{
+    "name": "xsl",
+    "displayName": "XSL",
+    "description": "X-Ita System Language",
+    "version": "0.1.1",
+    "publisher": "Codeus Tech, LLC",
+    "engines": {
+        "vscode": "^1.18.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": 
+        [{
+            "id": "xsl",
+            "aliases": ["XSL", "xsl"],
+            "extensions": [".xs", ".xh"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": 
+        [{
+            "language": "xsl",
+            "scopeName": "source.xsl",
+            "path": "./syntaxes/xsl.tmLanguage.json"
+        }]
+    }
+}

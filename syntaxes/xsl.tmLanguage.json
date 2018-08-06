@@ -46,15 +46,11 @@
 			[
 				{
 					"name":  "keyword.control.xsl",
-					"match": "\\b(if|then|else|in)\\b"
+					"match": "\\b(if|then|else|in|of)\\b"
 				},
 				{
 					"name":  "constant.other.color.xsl",
 					"match": "\\b(printdb|print)\\b"
-				},
-				{
-					"name":  "keyword.xsl",
-					"match": "\\b(type)\\b"
 				},
 				{
 					"name": "keyword.xsl",
@@ -111,7 +107,7 @@
 			"patterns":
 			[
 				{
-					"name": "variable.parameter",
+					"name": "variable.parameter.xsl",
 					"match": "\\b(let)\\b\\s\\b([a-z_`'][a-zA-Z0-9_`']*)\\b(\\s\\b([a-z_`'][a-zA-Z0-9_`']*)\\b)*",
 					"captures":
 					{
@@ -126,6 +122,18 @@
 					{
 						"1": {"name": "keyword.other"},
 						"2": {"name": "constant"}
+					}
+				},
+				{
+					"name": "markup.bold.xsl",
+					"match": "\\b([A-Z][a-zA-Z0-9_`']*)\\b"
+				},
+				{
+					"match": "\\b(type)\\b\\s\\b([a-z_`'][a-zA-Z0-9_`']*)\\b",
+					"captures": 
+					{
+						"1": {"name": "keyword.control.xsl"},
+						"2": {"name": "markup.italic.xsl"}
 					}
 				}
 			]

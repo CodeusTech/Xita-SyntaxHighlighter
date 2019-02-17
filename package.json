@@ -1,7 +1,7 @@
 {
-    "name": "xsl",
-    "displayName": "XSL",
-    "description": "X-Ita System Language",
+    "name": "xcsl",
+    "displayName": "XCSL",
+    "description": "X-Ita Control System Language",
     "version": "0.1.1",
     "publisher": "Codeus Tech, LLC",
     "engines": {
@@ -13,16 +13,16 @@
     "contributes": {
         "languages": 
         [{
-            "id": "xsl",
-            "aliases": ["XSL", "xsl"],
-            "extensions": [".xs", ".xh"],
+            "id": "xcsl",
+            "aliases": ["XCSL", "xcsl"],
+            "extensions": [".xs", ".xh", ".xt"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": 
         [{
-            "language": "xsl",
-            "scopeName": "source.xsl",
-            "path": "./syntaxes/xsl.tmLanguage.json"
+            "language": "xcsl",
+            "scopeName": "source.xcsl",
+            "path": "./syntaxes/xcsl.tmLanguage.json"
         }]
     }
 }

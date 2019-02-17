@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "XSL",
+	"name": "XCSL",
 	"patterns": [
 		{
 			"include": "#keywords"
@@ -28,13 +28,13 @@
 			"patterns":
 			[
 				{
-					"name"	: "comment.block.xsl",
+					"name"	: "comment.block.xcsl",
 					"begin"	: "\\(\\*",
 					"end"		: "\\*\\)"
 
 				},
 				{
-					"name"	: "comment.line.xsl",
+					"name"	: "comment.line.xcsl",
 					"begin" : "--",
 					"end"		: "\n"
 				}
@@ -45,20 +45,16 @@
 			"patterns": 
 			[
 				{
-					"name":  "keyword.control.xsl",
-					"match": "\\b(if|then|else|in|of)\\b"
+					"name":  "keyword.control.xcsl",
+					"match": "\\b(if|then|else|in|of|match|with|is|this|offer)\\b"
 				},
 				{
-					"name":  "constant.other.color.xsl",
+					"name":  "constant.other.color.xcsl",
 					"match": "\\b(printdb|print)\\b"
 				},
 				{
-					"name": "keyword.xsl",
-					"match": "<<-"
-				},
-				{
 					"name": "markup.italic",
-					"match": "\\b(int|char|string|list|float|double|i8|i16|i32|i64)\\b"
+					"match": "\\b(int|i8|i16|i32|i64|u8|u16|u32|u64|bool|real|float|double|char|string|list)\\b"
 				}
 			]
 		},
@@ -67,13 +63,13 @@
 			"patterns": 
 			[
 				{
-					"name": "string.quoted.double.xsl",
+					"name": "string.quoted.double.xcsl",
 					"begin": "\"",
 					"end": "\"",
 					"patterns": 
 					[
 						{
-							"name": "constant.character.escape.xsl",
+							"name": "constant.character.escape.xcsl",
 							"match": "\\\\."
 						}
 					]
@@ -85,7 +81,7 @@
 					"patterns": 
 					[
 						{
-							"name": "constant.character.escape.xsl",
+							"name": "constant.character.escape.xcsl",
 							"match": "\\\\."
 						}
 					]
@@ -95,14 +91,14 @@
 		"constant":
 		{
 			"patterns":
-			[
+			[ 
 				{
-					"name"	: "constant.numeric.xsl",
-					"match"	: "\\b([0-9]+|0[xX][0-9a-fA-F]+)\\b"
+					"name"	: "constant.numeric.xcsl",
+					"match"	: "\\b(0[bB][0-1]+|0[oO][0-7]+|[0-9]+|0[xX][0-9a-fA-F]+)\\b"
 				},
 				{
-					"name": "constant.language.xsl",
-					"match": "\\b(true|false)\\b"
+					"name": "constant.language.xcsl",
+					"match": "\\b(True|Talse)\\b"
 				}
 			]
 		},
@@ -111,7 +107,7 @@
 			"patterns":
 			[
 				{
-					"name": "variable.parameter.xsl",
+					"name": "variable.parameter.xcsl",
 					"match": "\\b(let)\\b\\s\\b([a-z_`'][a-zA-Z0-9_`']*)\\b(\\s\\b([a-z_`'][a-zA-Z0-9_`']*)\\b)*",
 					"captures":
 					{
@@ -129,19 +125,19 @@
 					}
 				},
 				{
-					"name": "markup.bold.xsl",
+					"name": "markup.bold.xcsl",
 					"match": "\\b([A-Z][a-zA-Z0-9_`']*)\\b"
 				},
 				{
-					"match": "\\b(type)\\b\\s\\b([a-z_`'][a-zA-Z0-9_`']*)\\b",
+					"match": "\\b(type)\\b\\s\\b([a-z_][a-zA-Z0-9_]*'?)\\b",
 					"captures": 
 					{
-						"1": {"name": "keyword.control.xsl"},
-						"2": {"name": "markup.italic.xsl"}
+						"1": {"name": "keyword.control.xcsl"},
+						"2": {"name": "markup.italic.xcsl"}
 					}
 				}
 			]
 		}
 	},
-	"scopeName": "source.xsl"
+	"scopeName": "source.xcsl"
 }

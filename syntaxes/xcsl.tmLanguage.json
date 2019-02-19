@@ -46,7 +46,7 @@
 			[
 				{
 					"name":  "keyword.control.xcsl",
-					"match": "\\b(if|then|else|in|match|with|is|this|open|send|receive|tether)\\b"
+					"match": "\\b(if|then|else|in|is|this|open|send|receive|tether)\\b"
 				},
 				{
 					"name":  "constant.other.color.xcsl",
@@ -151,6 +151,16 @@
 						"4": {"name": "keyword.control.xcsl"},
 						"5": {"name": "markup.italic"},
 						"6": {"name": "variable.parameter"}
+					}
+				},
+				{
+					"match": "\\b(match)\\b\\s(\\b([A-Z][a-zA-Z0-9_]*)\\b\\s)?\\b([a-z_][a-zA-Z0-9_ ]*)\\b\\s\\b(with)\\b",
+					"captures":
+					{
+						"1": {"name": "keyword.control.xcsl"},
+						"2": {"name": "markup.bold"},
+						"4": {"name": "variable.parameter"},
+						"5": {"name": "keyword.control.xcsl"}
 					}
 				}
 			]

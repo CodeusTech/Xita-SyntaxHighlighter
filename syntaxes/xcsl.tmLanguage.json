@@ -154,13 +154,12 @@
 					}
 				},
 				{
-					"match": "\\b(match)\\b\\s(\\b([A-Z][a-zA-Z0-9_]*)\\b\\s)?\\b([a-z_][a-zA-Z0-9_ ]*)\\b\\s\\b(with)\\b",
+					"match": "\\b(match\\s)\\b(([a-z_][a-zA-Z0-9_]*\\s)*)\\b(with)\\b",
 					"captures":
 					{
 						"1": {"name": "keyword.control.xcsl"},
-						"2": {"name": "markup.bold"},
-						"4": {"name": "variable.parameter"},
-						"5": {"name": "keyword.control.xcsl"}
+						"2": {"name": "variable.parameter"},
+						"4": {"name": "keyword.control.xcsl"}
 					}
 				}
 			]

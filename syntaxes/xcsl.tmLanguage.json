@@ -46,7 +46,7 @@
 			[
 				{
 					"name":  "keyword.control.xcsl",
-					"match": "\\b(if|then|else|in|match|with|is|this|open)\\b"
+					"match": "\\b(if|then|else|in|match|with|is|this|open|send|receive|tether)\\b"
 				},
 				{
 					"name":  "constant.other.color.xcsl",
@@ -143,7 +143,7 @@
 					}
 				},
 				{
-					"match": "\\b(offer)\\b\\s\\b([a-z_][a-zA-Z0-9_]*)\\b\\s(\\b(of)\\b\\s\\b([a-z_][a-zA-Z0-9_]*)\\b\\s)?\\b([^=]*)\\b\\s=",
+					"match": "\\b(offer)\\b\\s\\b([a-z_][a-zA-Z0-9_]*)\\b\\s(\\b(of)\\b\\s\\b([a-z_][a-zA-Z0-9_]*)\\b\\s)?(\\b([^=]*)\\b\\s)?=",
 					"captures":
 					{
 						"1": {"name": "keyword.control.xcsl"},

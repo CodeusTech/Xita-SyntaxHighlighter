@@ -34,6 +34,12 @@
 
 				},
 				{
+					"name"	: "comment.block.xcsl",
+					"begin"	: "\\(!\\*",
+					"end"		: "\\*\\)"
+
+				},
+				{
 					"name"	: "comment.line.xcsl",
 					"begin" : "--",
 					"end"		: "\n"
@@ -46,11 +52,11 @@
 			[
 				{
 					"name":  "keyword.control.xcsl",
-					"match": "\\b(if|then|else|in|is|this|open|send|receive|tether)\\b"
+					"match": "\\b(if|then|else|in|is|this|open|send|receive|tether|of)\\b"
 				},
 				{
 					"name":  "constant.other.color.xcsl",
-					"match": "\\b(printf)\\b"
+					"match": "\\b(printf|rng)\\b"
 				},
 				{
 					"name": "markup.italic",
@@ -107,7 +113,7 @@
 			"patterns":
 			[
 				{
-					"match": "\\b(let)\\b\\s+\\b([a-z_][a-zA-Z0-9_`]*)\\b\\s+\\b(([^=]*)\\b\\s+)?=",
+					"match": "\\b(let)\\b\\s+\\b([a-z_][a-zA-Z0-9_`]*)\\b\\s+(\\b([^=]*)\\b\\s+)?=",
 					"captures":
 					{
 						"1": {"name": "keyword.other"},

@@ -170,12 +170,22 @@
 					}
 				},
 				{
-					"match": "\\b(match\\s+)\\b(([a-z_][a-zA-Z0-9_]*\\s+)*)\\b(with)\\b",
+					"match": "\\b(request)\\b\\s+\\b([a-z_][a-zA-Z0-9_]*)\\b(\\s+\\b([a-zA-Z0-9_ ]*)\\b)?",
 					"captures":
 					{
 						"1": {"name": "keyword.control.xcsl"},
-						"2": {"name": "variable.parameter"},
-						"4": {"name": "keyword.control.xcsl"}
+						"2": {"name": "entity.name.function"},
+						"3": {"name": "variable.parameter"}
+					}
+				},
+				{
+					"match": "\\b(match\\s+)\\b([a-z_][a-zA-Z0-9_]*\\s+)?\\b(([a-z_][a-zA-Z0-9_]*\\s+)+)\\b(with)\\b",
+					"captures":
+					{
+						"1": {"name": "keyword.control.xcsl"},
+						"2": {"name": "entity.name.function.xcsl"},
+						"3": {"name": "variable.parameter.xcsl"},
+						"5": {"name": "keyword.control.xcsl"}
 					}
 				}
 			]

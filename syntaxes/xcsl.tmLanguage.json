@@ -52,7 +52,7 @@
 			[
 				{
 					"name":  "keyword.control.xcsl",
-					"match": "\\b(if|then|else|in|is|this|open|send|receive|tether|of)\\b"
+					"match": "\\b(if|then|else|in|is|this|open|send|receive|tether)\\b"
 				},
 				{
 					"name":  "constant.other.color.xcsl",
@@ -139,6 +139,15 @@
 					}
 				},
 				{
+					"match": "\\b(const)\\b\\s+\\b([A-Z][a-zA-Z0-9_`]*)\\b\\s+\\b([a-z_][a-zA-Z0-9_`]*)\\b",
+					"captures":
+					{
+						"1": {"name": "keyword.control"},
+						"2": {"name": "markup.bold.xcsl"},
+						"3": {"name": "constant"}
+					}
+				},
+				{
 					"match": "\\b(type)\\b\\s+\\b([a-z_][a-zA-Z0-9_]*)\\b",
 					"captures": 
 					{
@@ -151,11 +160,12 @@
 					"match": "\\b([A-Z][a-zA-Z0-9_]*'?)\\b"
 				},
 				{
-					"match": "\\b(of)\\b\\s+\\b([a-z_][a-zA-Z0-9_]*)\\b",
+					"match": "(\\b([a-z_][a-zA-Z0-9_]*)\\b)?\\s+\\b(of)\\b\\s+(\\b([a-z_][a-zA-Z0-9_]*)\\b)?",
 					"captures": 
 					{
-						"1": {"name": "keyword.control.xcsl"},
-						"2": {"name": "markup.italic.xcsl"}
+						"2": {"name": "variable.parameter"},
+						"3": {"name": "keyword.control.xcsl"},
+						"4": {"name": "markup.italic.xcsl"}
 					}
 				},
 				{

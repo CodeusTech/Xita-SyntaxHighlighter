@@ -105,6 +105,23 @@
 				{
 					"name": "constant.language.xcsl",
 					"match": "\\b(True|False)\\b"
+				},
+				{
+					"match": "\\b(const)\\b\\s+\\b([a-z_][a-zA-Z0-9_`]*)\\b",
+					"captures": 
+					{
+						"1": {"name": "keyword.control.xcsl"},
+						"2": {"name": "constant.xcsl"}
+					}
+				},
+				{
+					"match": "\\b(const)\\b\\s+\\b([A-Z][a-zA-Z0-9_`]*)\\b\\s+\\b([a-z_][a-zA-Z0-9_`]*)\\b",
+					"captures":
+					{
+						"1": {"name": "keyword.control.xcsl"},
+						"2": {"name": "markup.bold.xcsl"},
+						"3": {"name": "constant.xcsl"}
+					}
 				}
 			]
 		},
@@ -131,23 +148,6 @@
 					}
 				},
 				{
-					"match": "\\b(const)\\b\\s+\\b([a-z_][a-zA-Z0-9_`]*)\\b",
-					"captures": 
-					{
-						"1": {"name": "keyword.control.xcsl"},
-						"2": {"name": "constant.xcsl"}
-					}
-				},
-				{
-					"match": "\\b(const)\\b\\s+\\b([A-Z][a-zA-Z0-9_`]*)\\b\\s+\\b([a-z_][a-zA-Z0-9_`]*)\\b",
-					"captures":
-					{
-						"1": {"name": "keyword.control.xcsl"},
-						"2": {"name": "markup.bold.xcsl"},
-						"3": {"name": "constant.xcsl"}
-					}
-				},
-				{
 					"match": "\\b(type)\\b\\s+\\b([a-z_][a-zA-Z0-9_]*)\\b",
 					"captures": 
 					{
@@ -156,11 +156,12 @@
 					}
 				},
 				{
-					"match": "\\b(typeclass)\\b\\s+\\b([a-z_][a-zA-Z0-9_]*)\\b",
+					"match": "\\b(typeclass)\\b\\s+\\b([a-z_][a-zA-Z0-9_]*)\\b\\s+(\\b([ a-zA-Z0-9_]*)\\b)?",
 					"captures":
 					{
 						"1": {"name": "keyword.control.xcsl"},
-						"2": {"name": "support.type.xcsl"}
+						"2": {"name": "support.type.xcsl"},
+						"3": {"name": "variable.parameter"}
 					}
 				},
 				{
@@ -173,11 +174,20 @@
 					}
 				},
 				{
-					"match": "\\b([a-z_][a-zA-Z0-9_]*)\\b\\s+\\b([a-z_][a-zA-Z0-9_]*\\s*)*\\b(,|;;)",
+					"match": "\\b([a-z_][a-zA-Z0-9_]*)\\b\\s+\\b([a-zA-Z0-9_ ]*)\\b(,|;;)",
 					"captures":
 					{
 						"1": {"name": "entity.name.function"},
 						"2": {"name": "variable.parameter"}
+					}
+				},
+				{
+					"match": "\\b([a-z_][a-zA-Z0-9_]*)\\b\\s+\\b([a-zA-Z0-9_ ]*)\\b\\s*=\\s*\\b([a-zA-Z0-9_ ]*)\\b(,|;;)?",
+					"captures":
+					{
+						"1": {"name": "entity.name.function"},
+						"2": {"name": "variable.parameter"},
+						"3": {"name": "support.type"}
 					}
 				},
 				{
@@ -196,7 +206,7 @@
 					}
 				},
 				{
-					"match": "\\b(request)\\b\\s+\\b([a-z_][a-zA-Z0-9_]*)\\b(\\s+\\b([a-zA-Z0-9_ ]*)\\b)?",
+					"match": "\\b(request)\\b\\s+\\b([a-z_][a-zA-Z0-9_]*)\\b\\s+(\\b([a-zA-Z0-9_ ]*)\\b)?",
 					"captures":
 					{
 						"1": {"name": "keyword.control.xcsl"},

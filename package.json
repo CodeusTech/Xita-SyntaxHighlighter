@@ -15,7 +15,7 @@
         [{
             "id": "xcsl",
             "aliases": ["XCSL", "xcsl"],
-            "extensions": [".xs", ".xh", ".xt"],
+            "extensions": [".xs", ".xh", ".xt", ".xtok"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": 

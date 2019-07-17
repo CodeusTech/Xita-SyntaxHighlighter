@@ -82,7 +82,7 @@
 			[
 				{
 					"name":  "keyword.control.xcsl",
-					"match": "\\b(if|then|else|in|is|this|open|send|receive|tether|requires)\\b"
+					"match": "\\b(if|then|else|in|is|this|open|send|receive|tether|requires|sizeof)\\b"
 				},
 				{
 					"name":  "constant.other.color.xcsl",

@@ -148,6 +148,16 @@
 					}
 				},
 				{
+					"match": "\\b(file)\\b\\s+\\b([a-z_][a-zA-Z_0-9]*)\\b\\s+",
+					"captures":
+					{
+						"1": {"name": "keyword.control.xcsl"},
+						"2": {"name": "entity.name.function.xcsl"},
+						"3": {"name": "variable.parameter.xcsl"},
+						"4": {"name": "markup.italic.xcsl"}
+					}
+				},
+				{
 					"match": "\\b(type)\\b\\s+\\b([a-z_][a-zA-Z0-9_]*)\\b(\\s+\\b([^=]*)\\b)?\\s*=",
 					"captures":
 					{

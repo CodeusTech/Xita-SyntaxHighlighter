@@ -148,13 +148,20 @@
 					}
 				},
 				{
-					"match": "\\b(file)\\b\\s+\\b([a-z_][a-zA-Z_0-9]*)\\b\\s+",
+					"match": "\\b(file)\\b\\s+\\b([a-z_][a-zA-Z_0-9]*)\\b\\s*[a-zA-Z0-9_, ]*\\s*:\\s*\\b([a-zA-Z_0-9]*)\\b",
 					"captures":
 					{
 						"1": {"name": "keyword.control.xcsl"},
 						"2": {"name": "entity.name.function.xcsl"},
-						"3": {"name": "variable.parameter.xcsl"},
-						"4": {"name": "markup.italic.xcsl"}
+						"3": {"name": "markup.italic.xcsl"}
+					}
+				},
+				{
+					"match": "\\b(read|write|append)\\b\\s+\\b([a-z_][a-zA-Z_0-9]*)\\b",
+					"captures":
+					{
+						"1": {"name": "keyword.control.xcsl"},
+						"2": {"name": "entity.name.function.xcsl"}
 					}
 				},
 				{

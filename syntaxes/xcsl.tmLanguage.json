@@ -165,6 +165,23 @@
 					}
 				},
 				{
+					"match": "\\b(tsearch)\\b\\s+\\b([\\.a-zA-Z_0-9,+ ]*)\\b",
+					"captures":
+					{
+						"1": {"name": "keyword.control.xcsl"},
+						"2": {"name": "variable.parameter.xcsl"}
+					}
+				},
+				{
+					"match": "\\b(search)\\b\\s+(\\b([a-zA-Z_0-9,+ \\.]*)\\b\\s*:\\s*)?\\b([a-zA-Z_0-9\\.]+)\\b",
+					"captures":
+					{
+						"1": {"name": "keyword.control.xcsl"},
+						"3": {"name": "variable.parameter.xcsl"},
+						"4": {"name": "markup.italic.xcsl"}
+					}
+				},
+				{
 					"match": "\\b(type)\\b\\s+\\b([a-z_][a-zA-Z0-9_]*)\\b(\\s+\\b([^=]*)\\b)?\\s*=",
 					"captures":
 					{

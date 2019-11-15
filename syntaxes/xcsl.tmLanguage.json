@@ -82,14 +82,14 @@
 			[
 				{
 					"name":  "keyword.control.xcsl",
-					"match": "\\b(if|then|else|in|is|this|open|send|receive|tether|requires|sizeof)\\b"
+					"match": "\\b(if|then|else|in|is|this|open|send|receive|tether|requires|sizeof|delay)\\b"
 				},
 				{
 					"name":  "constant.other.color.xcsl",
-					"match": "\\b(printf|rng|regex)\\b"
+					"match": "\\b(printf|rng|regex|debug)\\b"
 				},
 				{
-					"name": "support.type",
+					"name": "support.type.xcsl",
 					"match": "\\b(int|i8|i16|i32|i64|u8|u16|u32|u64|bool|real|float|double|char|string|list)\\b"
 				}
 			]
@@ -98,6 +98,10 @@
 		{
 			"patterns":
 			[ 
+				{
+					"name"  : "keyword.control.xcsl",
+					"match" : "\\b(@[a-zA-Z0-9_]+)\\b"
+				},
 				{
 					"name"	: "constant.numeric.xcsl",
 					"match"	: "\\b(0[bB][0-1]+|0[oO][0-7]+|[0-9]+|0[xX][0-9a-fA-F]+)\\b"
@@ -154,6 +158,14 @@
 						"1": {"name": "keyword.control.xcsl"},
 						"2": {"name": "entity.name.function.xcsl"},
 						"3": {"name": "markup.italic.xcsl"}
+					}
+				},
+				{
+					"match": "\\b(file)\\b\\s+\\b([a-z_][a-zA-Z_0-9]*)\\b",
+					"captures":
+					{
+						"1": {"name": "keyword.control.xcsl"},
+						"2": {"name": "entity.name.function.xcsl"}
 					}
 				},
 				{
@@ -250,7 +262,7 @@
 					}
 				},
 				{
-					"match": "\\b(match\\s+)\\b([a-z_][a-zA-Z0-9_]*\\s+)?\\b(([a-z_][a-zA-Z0-9_\\.]*\\s+)+)\\b(with)\\b",
+					"match": "\\b(match)\\s+\\b([a-z_][a-zA-Z0-9_]*\\s+)?\\b(([a-z_][a-zA-Z0-9_\\.]*\\s+)+)\\b(with)\\b",
 					"captures":
 					{
 						"1": {"name": "keyword.control.xcsl"},

@@ -116,6 +116,14 @@
 			"patterns":
 			[
 				{
+					"match" : "\\b(open)\\b\\s+\\b([^\n]+)\\b",
+					"captures": 
+					{
+						"1": {"name": "keyword.control.xcsl"},
+						"2": {"name": "entity.name.class"}
+					}
+				},
+				{
 					"name"  : "markup.bold.xcsl",
 					"match" : "\\b(_?[A-Z][a-zA-Z0-9_]*)\\b"
 				},
@@ -244,7 +252,7 @@
 			[
 				{
 					"name":  "keyword.control.xcsl",
-					"match": "\\b(if|then|else|in|is|this|open|send|receive|tether|requires|sizeof|delay|let|match|with)\\b"
+					"match": "\\b(if|then|else|in|is|this|send|receive|tether|requires|sizeof|delay|let|match|with|hd|tl|len)\\b"
 				},
 				{
 					"name":  "constant.other.color.xcsl",

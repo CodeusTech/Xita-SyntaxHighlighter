@@ -116,7 +116,7 @@
 			"patterns":
 			[
 				{
-					"match" : "\\b(open)\\b\\s+\\b([^\n]+)\\b",
+					"match" : "\\b(open)\\b\\s+[\\./]*\\b(.+)\\b",
 					"captures": 
 					{
 						"1": {"name": "keyword.control.xcsl"},
@@ -142,7 +142,7 @@
 					}
 				},
 				{
-					"match": "\\b([a-z_][a-zA-Z_0-9]*)\\b\\s*[a-zA-Z0-9_, ]*\\s*:\\s*\\b([a-zA-Z_0-9]*)\\b",
+					"match": "\\b([a-z_][a-zA-Z_0-9]*)\\b\\s*[a-zA-Z0-9_, ]*\\s*:\\s*\\b([a-zA-Z_0-9 ]*)\\b",
 					"captures":
 					{
 						"1": {"name": "entity.name.function.xcsl"},
@@ -252,11 +252,11 @@
 			[
 				{
 					"name":  "keyword.control.xcsl",
-					"match": "\\b(if|then|else|in|is|this|send|receive|tether|requires|sizeof|delay|let|match|with|hd|tl|len)\\b"
+					"match": "\\b(if|then|else|in|is|this|send|receive|tether|requires|sizeof|delay|let|match|with|hd|tl|len|of)\\b"
 				},
 				{
 					"name":  "constant.other.color.xcsl",
-					"match": "\\b(printf|rng|regex|debug)\\b"
+					"match": "\\b(printf|rng|regex|debug|undef)\\b"
 				},
 				{
 					"name": "support.type.xcsl",

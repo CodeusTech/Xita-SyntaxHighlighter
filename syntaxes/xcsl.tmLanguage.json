@@ -134,7 +134,7 @@
 			"patterns":
 			[
 				{
-					"match" : "\\b(open|include|run)\\b\\s+[\\./]*\\b(.+)\\b",
+					"match" : "\\b(open|import|run)\\b\\s+[\\./]*\\b(.+)\\b",
 					"captures": 
 					{
 						"1": {"name": "keyword.control.xcsl"},

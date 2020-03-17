@@ -75,6 +75,24 @@
 					]
 				}
 			]
+		}, 
+		"keywords": 
+		{
+			"patterns": 
+			[
+				{
+					"name":  "keyword.control.xcsl",
+					"match": "\\b(if|then|else|in|is|this|send|receive|tether|requires|sizeof|delay|let|match|with|hd|tl|len|of)\\b"
+				},
+				{
+					"name":  "constant.other.color.xcsl",
+					"match": "\\b(print|rng|regex|debug|undef|TOKEN|parser)\\b"
+				},
+				{
+					"name": "support.type.xcsl",
+					"match": "\\b(int|i8|i16|i32|i64|u8|u16|u32|u64|bool|real|float|double|char|string|list)\\b"
+				}
+			]
 		},
 		"constant":
 		{
@@ -116,7 +134,7 @@
 			"patterns":
 			[
 				{
-					"match" : "\\b(open)\\b\\s+[\\./]*\\b(.+)\\b",
+					"match" : "\\b(open|include|run)\\b\\s+[\\./]*\\b(.+)\\b",
 					"captures": 
 					{
 						"1": {"name": "keyword.control.xcsl"},
@@ -243,24 +261,6 @@
 						"1": {"name": "entity.name.function.xcsl"},
 						"3": {"name": "variable.parameter.xcsl"}
 					}
-				}
-			]
-		}, 
-		"keywords": 
-		{
-			"patterns": 
-			[
-				{
-					"name":  "keyword.control.xcsl",
-					"match": "\\b(if|then|else|in|is|this|send|receive|tether|requires|sizeof|delay|let|match|with|hd|tl|len|of)\\b"
-				},
-				{
-					"name":  "constant.other.color.xcsl",
-					"match": "\\b(printf|rng|regex|debug|undef)\\b"
-				},
-				{
-					"name": "support.type.xcsl",
-					"match": "\\b(int|i8|i16|i32|i64|u8|u16|u32|u64|bool|real|float|double|char|string|list)\\b"
 				}
 			]
 		}

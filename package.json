@@ -33,7 +33,7 @@
         {
             "language": "xita_chip",
             "scopeName": "source.xita_chip",
-            "path": "./syntaxes/xcsl.tmLanguage.json"
+            "path": "./syntaxes/xita-chip.tmLanguage.json"
         }]
     }
 }

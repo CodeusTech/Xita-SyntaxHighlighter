@@ -1,0 +1,135 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "XCSL",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#misc"
+		},
+		{
+			"include": "#constant"
+		},
+		{
+			"include": "#functions"
+		}
+	],
+	"repository": 
+	{
+		"comment":
+		{
+			"patterns":
+			[
+				{
+					"name"	: "comment.block.xcsl",
+					"begin"	: "\\(\\*",
+					"end"		: "\\*\\)"
+
+				},
+				{
+					"name"	: "comment.block.xcsl",
+					"begin"	: "\\(!\\*",
+					"end"		: "\\*\\)"
+
+				},
+				{
+					"name"	: "comment.line.xcsl",
+					"begin" : "--",
+					"end"		: "\n"
+				}
+			]
+		},
+		"strings": 
+		{
+			"patterns": 
+			[
+				{
+					"name": "string.quoted.double.xcsl",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": 
+					[
+						{
+							"name": "constant.character.escape.xcsl",
+							"match": "\\\\."
+						}
+					]
+				},
+				{
+					"name": "string.quoted.single",
+					"begin": "'",
+					"end"	 : "'",
+					"patterns": 
+					[
+						{
+							"name": "constant.character.escape.xcsl",
+							"match": "\\\\."
+						}
+					]
+				}
+			]
+		}, 
+		"constant":
+		{
+			"patterns":
+			[ 
+				{
+					"name"  : "keyword.control.xcsl",
+					"match" : "\\b(@[a-zA-Z0-9_]+)\\b"
+				},
+				{
+					"name"	: "constant.numeric.xcsl",
+					"match"	: "\\b(0[bB][0-1]+|0[oO][0-7]+|[0-9]+|0[xX][0-9a-fA-F]+)\\b"
+				},
+				{
+					"name": "constant.language.xcsl",
+					"match": "\\b(True|False)\\b"
+				},
+				{
+					"match": "\\b(const)\\b\\s+\\b([a-z_][a-zA-Z0-9_`]*)\\b",
+					"captures": 
+					{
+						"1": {"name": "keyword.control.xcsl"},
+						"2": {"name": "constant.xcsl"}
+					}
+				},
+				{
+					"match": "\\b(const)\\b\\s+\\b([A-Z][a-zA-Z0-9_`]*)\\b\\s+\\b([a-z_][a-zA-Z0-9_`]*)\\b",
+					"captures":
+					{
+						"1": {"name": "keyword.control.xcsl"},
+						"2": {"name": "markup.bold.xcsl"},
+						"3": {"name": "constant.xcsl"}
+					}
+				}
+			]
+		},
+		"functions":
+		{
+			"patterns":
+			[
+				{
+					"name"  : "markup.bold.xcsl",
+					"match" : "\\b(_?[A-Z][a-zA-Z0-9_]*)\\b"
+				},
+				{
+					"match": "\\b(_?[a-z][a-zA-Z_0-9]*)\\b\\s*(\\b(_?[a-z][a-zA-Z_0-9 ]*)\\b\\s*)*",
+					"captures": 
+					{
+						"1": {"name": "entity.name.function.xcsl"},
+						"3": {"name": "variable.parameter.xcsl"}
+					}
+				}
+			]
+		}
+	},
+
+	"scopeName": "source.xita_chip"
+}

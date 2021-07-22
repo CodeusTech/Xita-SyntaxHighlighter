@@ -7,6 +7,17 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 Special Colorization for hexadecimal numbers
 
 
+## 0.2.0 - July 22, 2021
+-  Project name changed to 'Xita' to reduce acronyms
+-  Added basic support for `*.chip` file recognition
+-  Very slight changes to colorizing of functions/types
+
+## 0.1.0  -  March 6, 2018
+-  Project name changed to XSL (X-Ita System Language)
+-  ``const`` keyword added to colorizer.
+-  Added Character Recognition
+-  Added Colorization of escaped characters in strings
+
 ## 0.0.0  -  December 2017
 -  Initial release
 -  Features basic language keyword recognition
@@ -14,12 +25,6 @@ Special Colorization for hexadecimal numbers
 -  Line/Block comment documentation
 -  Constant (including boolean) highlighting
 -  String recognition
-
-## 0.1.0  -  March 6, 2018
--  Project name changed to XSL (X-Ita System Language)
--  ``const`` keyword added to colorizer.
--  Added Character Recognition
--  Added Colorization of escaped characters in strings
 
 
 

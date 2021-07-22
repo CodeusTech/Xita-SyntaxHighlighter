@@ -2,26 +2,37 @@
     "name": "xcsl",
     "displayName": "XCSL",
     "description": "X-Ita Control System Language",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "publisher": "Codeus Tech, LLC",
     "engines": {
         "vscode": "^1.18.0"
     },
     "categories": [
-        "Languages"
+        "Programming Languages"
     ],
     "contributes": {
         "languages": 
         [{
             "id": "xcsl",
-            "aliases": ["XCSL", "xcsl"],
+            "aliases": ["Xita"],
             "extensions": [".xs", ".xh", ".xt", ".xtok"],
             "configuration": "./language-configuration.json"
+        },
+        {
+           "id": "xita_chip",
+           "aliases": ["Xita Chip"],
+           "extensions": [".chip"],
+           "configuration": "./chip-configuration.json"
         }],
         "grammars": 
         [{
             "language": "xcsl",
             "scopeName": "source.xcsl",
+            "path": "./syntaxes/xcsl.tmLanguage.json"
+        },
+        {
+            "language": "xita_chip",
+            "scopeName": "source.xita_chip",
             "path": "./syntaxes/xcsl.tmLanguage.json"
         }]
     }
